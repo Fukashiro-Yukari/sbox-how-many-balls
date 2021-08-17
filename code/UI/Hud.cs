@@ -12,6 +12,7 @@ public partial class HowManyBallsHud : HudEntity<RootPanel>
         RootPanel.StyleSheet.Load("/UI/Hud.scss");
 
         RootPanel.AddChild<BallsAmount>();
+        RootPanel.AddChild<Time>();
         RootPanel.AddChild<ChatBox>();
         RootPanel.AddChild<VoiceList>();
         RootPanel.AddChild<Scoreboard<ScoreboardEntry>>();

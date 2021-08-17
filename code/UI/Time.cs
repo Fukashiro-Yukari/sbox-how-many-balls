@@ -4,17 +4,22 @@ using Sandbox.UI.Construct;
 using System;
 using System.Linq;
 
-public class BallsAmount : Panel
+public class Time : Panel
 {
     public Label Label;
+    public float time = 0f;
 
-    public BallsAmount()
+    public Time()
     {
         Label = Add.Label("", "value");
     }
 
     public override void Tick()
     {
-        Label.Text = $"Count: {Entity.All.OfType<Prop>().Where(x => x.GetModelName() == "models/citizen_props/beachball.vmdl").Count()}";
+        time += RealTime.Delta;
+
+        var times = TimeSpan.FromSeconds((double)(new decimal(time)));
+
+        Label.Text = $"Time: {times}";
     }
 }
