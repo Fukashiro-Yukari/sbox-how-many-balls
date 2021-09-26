@@ -6,20 +6,20 @@ using System.Linq;
 
 public class Time : Panel
 {
-    public Label Label;
-    public float time = 0f;
+	public Label Label;
+	public float time = 0f;
 
-    public Time()
-    {
-        Label = Add.Label("", "value");
-    }
+	public Time()
+	{
+		Label = Add.Label( "", "value" );
+	}
 
-    public override void Tick()
-    {
-        time += RealTime.Delta;
+	public override void Tick()
+	{
+		time += RealTime.Delta;
 
-        var times = TimeSpan.FromSeconds((double)(new decimal(time)));
+		var times = TimeSpan.FromSeconds( (double)(new decimal( time )) );
 
-        Label.Text = $"Time: {times}";
-    }
+		Label.Text = $"Time: {times}";
+	}
 }

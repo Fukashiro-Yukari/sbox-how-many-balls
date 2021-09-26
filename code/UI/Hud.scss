@@ -1,9 +1,16 @@
+rootpanel
+{
+	&.devcamera
+	{
+		display: none;
+	}
+}
+
 BallsAmount
 {
     position: absolute;
     left: 100px;
 	right: 100px;
-	top: 850px;
 	bottom: 100px;
     font-size: 50px;
 	font-weight: bold;
@@ -18,20 +25,11 @@ Time
     position: absolute;
     left: 100px;
 	right: 100px;
-	top: 950px;
-	bottom: 100px;
+	bottom: 50px;
     font-size: 50px;
 	font-weight: bold;
 	text-shadow: 4px 4px 10px rgba( black, 0.3 );
 	color: white;
     justify-content: center;
 	align-items: center;
-}
-
-rootpanel
-{
-	&.devcamera
-	{
-		display: none;
-	}
 }

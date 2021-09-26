@@ -1,13 +1,10 @@
 ﻿using Sandbox;
-using System;
-using System.Linq;
 
-partial class HowManyBallsPlayer : Player
+partial class HowManyBallsPlayer : Entity
 {
-    public override void Respawn()
-    {
-        Camera = new ObserveCamera();
-
-        base.Respawn();
-    }
+	public HowManyBallsPlayer()
+	{
+		Camera = new ObserveCamera();
+		Transmit = TransmitType.Always;
+	}
 }

@@ -1,8 +1,5 @@
-﻿
-using Sandbox;
-using System.Collections.Generic;
+﻿using Sandbox;
 
-[Library("howmanyballs", Title = "How many balls ?")]
 partial class HowManyBalls : Game
 {
 	private WallSpawner wallSpawner;
@@ -24,25 +21,9 @@ partial class HowManyBalls : Game
 
 		var player = new HowManyBallsPlayer();
 		client.Pawn = player;
-
-		player.Respawn();
 	}
 
-	public override void DoPlayerNoclip(Client player)
-    {
-		if (ConsoleSystem.GetValue("sv_cheats") == "0") return;
-		if (player.Pawn is Player basePlayer)
-		{
-			if (basePlayer.DevController is NoclipController)
-			{
-				Log.Info("Noclip Mode Off");
-				basePlayer.DevController = null;
-			}
-			else
-			{
-				Log.Info("Noclip Mode On");
-				basePlayer.DevController = new NoclipController();
-			}
-		}
+	public override void DoPlayerNoclip( Client player )
+	{
 	}
 }
